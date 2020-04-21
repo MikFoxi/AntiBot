@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="<?php echo abTranslate('ltr'); ?>" lang="<?php echo abTranslate('en'); ?>">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="AntiBot.Cloud v. <?php echo $ab_version; ?>" />
+  <meta name="referrer" content="unsafe-url" />
+  <meta name="robots" content="noarchive" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="/favicon.ico">
+  <title><?php echo abTranslate('Just a moment...'); ?></title>
+  <style>
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+  
+</head>
+<body>
+<script>
+if (window.location.hostname !== window.atob("<?php echo base64_encode($ab_config['host']); ?>")) {
+window.location = window.atob("<?php echo base64_encode('http://'.$ab_config['host'].$ab_config['uri']); ?>");
+}
+
+function timer(){
+ var obj=document.getElementById('timer');
+ obj.innerHTML--;
+ if(obj.innerHTML==0){
+setTimeout(function(){},1000);
+<?php if ($ab_config['input_button'] == 0) { ?>
+document.getElementById("btn").innerHTML = window.atob('<?php echo base64_encode('<form action="" method="post"><input name="time" type="hidden" value="'.$ab_config['time'].'"><input name="antibot" type="hidden" value="'.md5($ab_config['salt'].$ab_config['time'].$ab_config['ip'].$ab_config['useragent']).'"><input name="cid" type="hidden" value="'.$ab_config['cid'].'"><input style="cursor: pointer;" type="submit" name="submit" value="Click to continue"></form>'); ?>');
+document.getElementsByName('submit')[0].value = "<?php echo abTranslate('Click to continue'); ?>";
+<?php } ?>
+}
+ else{setTimeout(timer,1000);}
+}
+setTimeout(timer,1000);
+</script>
+  <table style="width:100%; height:100%; padding:20px;">
+    <tr>
+      <td style="vertical-align:middle; text-align:center;">
+  <noscript><h1 style="color:#bd2426;"><?php echo abTranslate('Please turn JavaScript on and reload the page.'); ?></h1></noscript>
+  <div id="cf-content">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><?php echo abTranslate('Checking your browser before accessing the website.'); ?></h1>
+    <p><?php echo abTranslate('This process is automatic. Your browser will redirect to your requested content shortly.'); ?></p>
+    <p id="btn"><?php echo abTranslate('Please wait a few seconds:'); ?> <span id="timer"><?php echo $ab_config['timer']; ?></span></p>
+  </div>
+<div class="attribution">
+<p><a href="https://antibot.cloud/#<?php echo $ab_config['host']; ?>" title="Detect & Block Bad Bot Traffic" target="_blank" style="font-size:12px;">Protected by AntiBot.Cloud</a></p>
+</div>
+<div id="iframe"></div>
+      </td>
+    </tr>
+  </table>
+<script>
+var iframe = window.atob('<?php echo base64_encode('<iframe height="100" width="99%" src="'.$ab_config['check_url'].'?h1='.md5($ab_config['email'].$ab_config['pass'].$ab_config['host'].$ab_config['useragent'].$ab_config['accept_lang'].$ab_config['ip_short'].$ab_config['cf_check'].$ab_config['re_check'].$ab_config['ho_check']).'&h2='.md5('Antibot:'.$ab_config['email']).'&ip='.$ab_config['ip_short'].'&v='.$ab_version.'&r='.$ab_config['refhost'].'&cf='.$ab_config['cf_check'].'&re='.$ab_config['re_check'].'&ho='.$ab_config['ho_check'].'&cid='.$ab_config['cid'].'&ptr='.$ab_config['ptr'].'&rand='.$ab_config['time'].'" scrolling="no" frameborder="0"></iframe>'); ?>');
+document.getElementById('iframe').innerHTML = iframe;
+</script>
+<script>userip = "<?php echo $ab_config['ip']; ?>";</script>
+<p style="text-align:center;"><?php echo file_get_contents(__DIR__.'/counter.txt'); ?></p>
+</body>
+</html>
