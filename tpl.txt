@@ -2,43 +2,53 @@
 <html dir="<?php echo abTranslate('ltr'); ?>" lang="<?php echo abTranslate('en'); ?>">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="AntiBot.Cloud v. <?php echo $ab_version; ?>" />
   <meta name="referrer" content="unsafe-url" />
+  <meta name="robots" content="noindex" />
   <meta name="robots" content="noarchive" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel= "dns-prefetch" href="https://cloud.antibot.cloud" />
+  <link rel= "dns-prefetch" href="https://alt.antibot.cloud" />
   <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title><?php echo abTranslate('Just a moment...'); ?></title>
-<style>
-html, body {text-align:center; margin: 10px;}
-body {margin-top: 10%;}
-</style>
-  
+  <style>
+html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+h1 {font-size: 1.5em; color: #404040; text-align: center;}
+p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+.attribution {margin-top: 20px;}
+@-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+@keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+.bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+.btn-success {border: 2px solid transparent; background: #28a745; color: #ffffff; font-size: 18px; line-height: 15px; padding: 10px 10px; text-decoration: none; text-shadow: none; border-radius: 3px; box-shadow: none; transition: 0.25s; display: block; margin: 0 auto;}
+.btn-success:hover {background-color: #218838;}
+  </style>
 </head>
 <body>
-
+  <table style="width:100%; height:100%; padding:20px;">
+    <tr>
+      <td style="vertical-align:middle; text-align:center;">
   <noscript><h1 style="color:#bd2426;"><?php echo abTranslate('Please turn JavaScript on and reload the page.'); ?></h1></noscript>
-
-<div class="text-center">
-  <div class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>
-<br />
-
-    <h2><?php echo abTranslate('Checking your browser before accessing the website.'); ?></h2>
+  <div id="cf-content">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><?php echo abTranslate('Checking your browser before accessing the website.'); ?></h1>
     <p><?php echo abTranslate('This process is automatic. Your browser will redirect to your requested content shortly.'); ?></p>
     <p id="btn"><?php echo abTranslate('Please wait a few seconds.'); ?></p>
     <p id="error" style="color:red;"></p>
-
-<div class="footer">
-<p><small><a href="https://antibot.cloud/#<?php echo $ab_config['host']; ?>" title="Detect & Block Bad Bot Traffic" target="_blank">Protected by AntiBot.Cloud</a></small></p>
+  </div>
+<div class="attribution">
+<p><small><span style="color: #0000ff; cursor: pointer; text-decoration: underline;" onClick="parent.open('https://antibot.cloud/#<?php echo $ab_config['host']; ?>')" title="Detect & Block Bad Bot Traffic">Protected by AntiBot.Cloud</span></small></p>
 </div>
-
+<div id="iframe"></div>
+      </td>
+    </tr>
+  </table>
 <script>userip = "<?php echo $ab_config['ip']; ?>";</script>
 <?php echo file_get_contents(__DIR__.'/counter.txt'); ?>
 
 <?php require_once(__DIR__.'/../code/js.php'); ?>
-
 </body>
 </html>
