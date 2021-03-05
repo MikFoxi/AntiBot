@@ -40,7 +40,7 @@ p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
     <p id="error" style="color:red;"></p>
   </div>
 <div class="attribution">
-<p><small><span style="color: #0000ff; cursor: pointer; text-decoration: underline;" onClick="parent.open('https://antibot.cloud/#<?php echo $ab_config['host']; ?>')" title="Detect & Block Bad Bot Traffic">Protected by AntiBot.Cloud</span></small></p>
+<p><small><a href="https://antibot.cloud/#<?php echo $ab_config['host']; ?>" target="_blank" title="Detect & Block Bad Bot Traffic" style="color: #6c757d; text-decoration: none;">Protected by AntiBot.Cloud</a></small></p>
 </div>
 <div id="iframe"></div>
       </td>
