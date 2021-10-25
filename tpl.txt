@@ -3,11 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="referrer" content="unsafe-url" />
-  <meta name="robots" content="noindex" />
   <meta name="robots" content="noarchive" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel= "dns-prefetch" href="https://cloud.antibot.cloud" />
-  <link rel= "dns-prefetch" href="https://alt.antibot.cloud" />
   <link rel="icon" href="/favicon.ico">
   <title><?php echo abTranslate('Just a moment...'); ?></title>
   <style>
